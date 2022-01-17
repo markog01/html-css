@@ -1,0 +1,141 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas: 
+      'header'   
+      'nav'      
+      'slider'
+      'main'       
+      'footer';   
+    grid-gap: 10px;
+    grid-template-rows: auto auto auto auto auto;
+}
+
+#header {
+    grid-area: header;
+    background-color: #0466c8;
+    color: white;
+    text-align: center;
+}
+
+#navigation {
+    grid-area: nav;
+    background-color: #001233;
+    text-align: right;
+    font-size: 20px;
+}
+
+#navigation li {
+    display: inline;
+}
+
+#navigation a {
+    text-decoration: none;
+    padding: 20px;
+    color: white;
+}
+
+#navigation li a:hover {
+    background-color: #979dac;
+    color: black;
+}
+
+/* Slideshow */
+#slideshow {
+    grid-area: slider;
+    background-color: firebrick;
+    color: white;
+    text-align: center;
+}
+
+.slide img {
+    width: 100%;
+    max-height: 700px;
+    display: block;
+}
+
+/* Forma CSS */
+form {
+    max-width: 500px; 
+    margin: 25px auto 25px auto;
+    padding: 20px;
+    border: 1px solid black;
+}
+
+/* Pravila važe za input polje koje je tipa text i input polje koje je tipa email */
+input[type=text], input[type=email] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    margin-top: 6px;
+    margin-bottom: 16px;
+}
+
+input[type=submit] {
+    background-color: #444;
+    color: white;
+    padding: 10px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+    border-radius: 3px;
+}
+
+/* :hover - ako se kursor miša nanese na taj element */
+input[type=submit]:hover {
+    background-color: burlywood;
+    color: black;
+}
+
+#tekst {
+    display: inline;
+    margin-left: 30px;
+}
+
+/* Klasa u CSS-u se označava sa ".", ID se u CSS-u označava sa "#" */
+#info-tekst1, #info-tekst2, #info-tekst3 {
+    margin-top: 0;
+}
+
+#footer{
+    grid-area: footer;
+    text-align: center;
+    background-color: #979dac;
+}
+
+@media (max-width: 600px) {
+    .grid-container  {
+      grid-template-areas:       
+        'header'
+        'nav' 
+        'slider'     
+        'main'    
+        'footer'; 
+    }
+  
+    #slideshow {
+      display: none;
+    }
+  
+    /* Navigation */
+    #navigation ul {
+      padding: 0;
+    }
+    
+    #navigation li {
+      padding: 10px;
+      display: block;
+    }
+  
+    #navigation a {
+      padding: 0;
+      text-decoration: none;
+    }
+  }
